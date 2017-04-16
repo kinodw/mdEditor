@@ -13,10 +13,11 @@ export default class MarkdownEditorUI extends React.Component {
 		return (
 			<div className={style.markdownEditor}>
 					<Editor
-					  className={style.editorArea}
+					  //className={style.editorArea}
 					  value={this.state.text}
-					  onChange={this.onChangeText}
-					 // theme="textmate"
+					  edit={this._edit}
+					  //onChange={this.onChangeText}
+					  // theme="textmate"
 					 />
 					 <Previewer
 					  className={style.previewerArea}
@@ -30,10 +31,15 @@ export default class MarkdownEditorUI extends React.Component {
 		super(props);
 		this.state = {text:""};
 		this.onChangeText = this.onChangeText.bind(this);
+		this._edit = this._edit.bind(this);
 	}
 
 	onChangeText(e) {
 		this.setState({text: e.target.value});
+	}
+
+	_edit(value){
+	  this.setState({ text: value })
 	}
 
 	// ComponentがView上にマウントされたときとアンマウントされる直前でのメソッド
