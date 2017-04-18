@@ -1,16 +1,6 @@
 // import React from "react";
 import style from "./Editor.css";
 
-// export default function Editor(props) {
-// 	return (
-// 		<textarea
-// 			id="editor"
-// 			className={`${style.editor} ${props.className}`}
-// 			value={props.value}
-// 			onChange={props.onChange}
-// 		/>
-// 	);
-// }
 import React from "react";
 import brace from 'brace';
 import AceEditor from 'react-ace'; // aceのreact　componentを使います。
@@ -45,6 +35,6 @@ export default class Editor extends React.Component{
     )
   }
    _onChange(text){
-    this.props.edit(text); // propsでわたってきたものを実行
+    this.props.edit(text);
   }
 }
