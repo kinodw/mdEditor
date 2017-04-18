@@ -5,6 +5,7 @@ import Previewer from "./Previewer";
 import { ipcRenderer } from "electron";
 // import brace from "brace";
 // import 'brace/theme/textmate'; // カラーテーマを選ぶ
+var emojify = require('emojify.js');
 
 
 export default class MarkdownEditorUI extends React.Component {
@@ -22,6 +23,9 @@ export default class MarkdownEditorUI extends React.Component {
 					 <Previewer
 					  className={style.previewerArea}
 					  value={this.state.text}
+					  // markdownに含まれる:smileなどをhtml要素へ変換
+					  //value={emojify.replace(this.state.text)}
+					  toEmoji={emojify}
 					 />
 			</div>
 		);

@@ -19,9 +19,7 @@
 import React from "react";
 import marked from "marked";
 import style from "./Previewer.css";
-
-
-
+//import emojify from "emojify.js";
 
 marked.setOptions({ sanitize: true });
 
@@ -29,9 +27,12 @@ export default class Previewer extends React.Component{
 
   constructor(props){
     super(props);
-    //this.props.value = emoji.reaplace(this.props.value);
   }
   render(){
+    let targetText = this.props.value;
+    targetText = " " + targetText + " ";
+    targetText = marked(targetText);
+    targetText = this.props.toEmoji.replace(targetText);
     return(
       <div
        	id="previewer"
@@ -39,7 +40,7 @@ export default class Previewer extends React.Component{
       >
         <span
         dangerouslySetInnerHTML={
-          {__html: marked((this.props.value))}
+          {__html: targetText}
         }
         />
       </div>
