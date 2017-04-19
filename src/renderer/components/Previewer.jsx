@@ -30,9 +30,12 @@ export default class Previewer extends React.Component{
   }
   render(){
     let targetText = this.props.value;
-    targetText = " " + targetText + " ";
     targetText = marked(targetText);
+    //ratgetTextの、 :smile: のようなテキストに対して、前後に半角スペースを入れる処理
+    targetText = targetText.replace(/(:[0-9a-zA-Z_\+\-]+?:)/g, " $1 ");
     targetText = this.props.toEmoji.replace(targetText);
+
+    console.log(targetText);
     return(
       <div
        	id="previewer"
