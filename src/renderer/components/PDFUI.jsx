@@ -1,7 +1,7 @@
 import React from "react";
 import Previewer from "./Previewer.jsx";
 import { ipcRenderer } from "electron";
-
+var emojify = require("emojify.js");
 
 export default class PDFUI extends React.Component {
 	constructor(props) {
@@ -11,6 +11,7 @@ export default class PDFUI extends React.Component {
 
 	componentDidMount() {
 		const text = ipcRenderer.sendSync("REQUEST_TEXT");
+		console.log("PDFUIDidMount");
 		this.setState({ text });
 	}
 
@@ -33,7 +34,7 @@ export default class PDFUI extends React.Component {
 
 	render() {
 		return (
-			<Previewer value={this.state.text} />
+			<Previewer value={this.state.text} toEmoji={emojify} />
 		);
 	}
 }

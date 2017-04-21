@@ -66,7 +66,6 @@ function saveAsNewFile() {
 function exportPDF() {
 	Promise.all([ showExportPDFDialog(), mainWindow.requestText() ])
 	 .then(([filePath, text]) => {
-	 	console.log("first then");
 	 	const pdfWindow = createPDFWindow(text);
 	 	pdfWindow.on("RENDERED_CONTENTS", () => {
 	 		console.log("receive RENDERED_CONTENTS");

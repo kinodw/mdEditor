@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -63,12 +63,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 219);
+/******/ 	return __webpack_require__(__webpack_require__.s = 194);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 186:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80,7 +80,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _fs = __webpack_require__(218);
+var _fs = __webpack_require__(222);
 
 var _fs2 = _interopRequireDefault(_fs);
 
@@ -145,7 +145,7 @@ exports.default = createFileManager;
 
 /***/ }),
 
-/***/ 187:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -157,7 +157,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -208,7 +208,7 @@ exports.default = createMainWindow;
 
 /***/ }),
 
-/***/ 188:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -220,9 +220,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
-var _events = __webpack_require__(217);
+var _events = __webpack_require__(221);
 
 var _events2 = _interopRequireDefault(_events);
 
@@ -243,7 +243,7 @@ var PDFWindow = function (_EventEmitter) {
 		// PDF印刷用画面はユーザーに触れる必要がないため show: false
 		var _this = _possibleConstructorReturn(this, (PDFWindow.__proto__ || Object.getPrototypeOf(PDFWindow)).call(this, text));
 
-		_this.window = new _electron.BrowserWindow({ show: false });
+		_this.window = new _electron.BrowserWindow({ show: true });
 		_this.window.loadURL("file://" + __dirname + "/../../pdf.html");
 		_electron.ipcMain.once("REQUEST_TEXT", function (e) {
 			e.returnValue = text;
@@ -292,7 +292,7 @@ exports.default = createPDFWindow;
 
 /***/ }),
 
-/***/ 189:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -302,7 +302,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
 function setAppMenu(options) {
 	var template = [{
@@ -343,14 +343,7 @@ exports.default = setAppMenu;
 
 /***/ }),
 
-/***/ 19:
-/***/ (function(module, exports) {
-
-module.exports = require("electron");
-
-/***/ }),
-
-/***/ 190:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -360,7 +353,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
 function showExportPDFDialog() {
 	return new Promise(function (resolve, reject) {
@@ -380,7 +373,7 @@ exports.default = showExportPDFDialog;
 
 /***/ }),
 
-/***/ 191:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -390,7 +383,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
 function showOpenFileDialog() {
 	return new Promise(function (resolve, reject) {
@@ -412,7 +405,7 @@ exports.default = showOpenFileDialog;
 
 /***/ }),
 
-/***/ 192:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -422,7 +415,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
 function showSaveAsNewFileDialog() {
 	return new Promise(function (resolve, reject) {
@@ -442,21 +435,7 @@ exports.default = showSaveAsNewFileDialog;
 
 /***/ }),
 
-/***/ 217:
-/***/ (function(module, exports) {
-
-module.exports = require("events");
-
-/***/ }),
-
-/***/ 218:
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 219:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -464,33 +443,33 @@ module.exports = require("fs");
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _electron = __webpack_require__(19);
+var _electron = __webpack_require__(24);
 
-var _createMainWindow = __webpack_require__(187);
+var _createMainWindow = __webpack_require__(186);
 
 var _createMainWindow2 = _interopRequireDefault(_createMainWindow);
 
-var _setAppMenu = __webpack_require__(189);
+var _setAppMenu = __webpack_require__(188);
 
 var _setAppMenu2 = _interopRequireDefault(_setAppMenu);
 
-var _showSaveAsNewFileDialog = __webpack_require__(192);
+var _showSaveAsNewFileDialog = __webpack_require__(191);
 
 var _showSaveAsNewFileDialog2 = _interopRequireDefault(_showSaveAsNewFileDialog);
 
-var _createFileManager = __webpack_require__(186);
+var _createFileManager = __webpack_require__(185);
 
 var _createFileManager2 = _interopRequireDefault(_createFileManager);
 
-var _showOpenFileDialog = __webpack_require__(191);
+var _showOpenFileDialog = __webpack_require__(190);
 
 var _showOpenFileDialog2 = _interopRequireDefault(_showOpenFileDialog);
 
-var _createPDFWindow = __webpack_require__(188);
+var _createPDFWindow = __webpack_require__(187);
 
 var _createPDFWindow2 = _interopRequireDefault(_createPDFWindow);
 
-var _showExportPDFDialog = __webpack_require__(190);
+var _showExportPDFDialog = __webpack_require__(189);
 
 var _showExportPDFDialog2 = _interopRequireDefault(_showExportPDFDialog);
 
@@ -560,7 +539,6 @@ function exportPDF() {
 		    filePath = _ref4[0],
 		    text = _ref4[1];
 
-		console.log("first then");
 		var pdfWindow = (0, _createPDFWindow2.default)(text);
 		pdfWindow.on("RENDERED_CONTENTS", function () {
 			console.log("receive RENDERED_CONTENTS");
@@ -578,6 +556,27 @@ function exportPDF() {
 	});
 	console.log("exportPDF");
 }
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, exports) {
+
+module.exports = require("events");
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
+
+/***/ 24:
+/***/ (function(module, exports) {
+
+module.exports = require("electron");
 
 /***/ })
 
