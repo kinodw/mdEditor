@@ -68,7 +68,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -145,7 +145,7 @@ exports.default = createFileManager;
 
 /***/ }),
 
-/***/ 187:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -208,7 +208,7 @@ exports.default = createMainWindow;
 
 /***/ }),
 
-/***/ 188:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -292,7 +292,14 @@ exports.default = createPDFWindow;
 
 /***/ }),
 
-/***/ 189:
+/***/ 19:
+/***/ (function(module, exports) {
+
+module.exports = require("electron");
+
+/***/ }),
+
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -343,14 +350,7 @@ exports.default = setAppMenu;
 
 /***/ }),
 
-/***/ 19:
-/***/ (function(module, exports) {
-
-module.exports = require("electron");
-
-/***/ }),
-
-/***/ 190:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -380,7 +380,7 @@ exports.default = showExportPDFDialog;
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -412,7 +412,7 @@ exports.default = showOpenFileDialog;
 
 /***/ }),
 
-/***/ 192:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -466,31 +466,31 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _electron = __webpack_require__(19);
 
-var _createMainWindow = __webpack_require__(187);
+var _createMainWindow = __webpack_require__(188);
 
 var _createMainWindow2 = _interopRequireDefault(_createMainWindow);
 
-var _setAppMenu = __webpack_require__(189);
+var _setAppMenu = __webpack_require__(190);
 
 var _setAppMenu2 = _interopRequireDefault(_setAppMenu);
 
-var _showSaveAsNewFileDialog = __webpack_require__(192);
+var _showSaveAsNewFileDialog = __webpack_require__(193);
 
 var _showSaveAsNewFileDialog2 = _interopRequireDefault(_showSaveAsNewFileDialog);
 
-var _createFileManager = __webpack_require__(186);
+var _createFileManager = __webpack_require__(187);
 
 var _createFileManager2 = _interopRequireDefault(_createFileManager);
 
-var _showOpenFileDialog = __webpack_require__(191);
+var _showOpenFileDialog = __webpack_require__(192);
 
 var _showOpenFileDialog2 = _interopRequireDefault(_showOpenFileDialog);
 
-var _createPDFWindow = __webpack_require__(188);
+var _createPDFWindow = __webpack_require__(189);
 
 var _createPDFWindow2 = _interopRequireDefault(_createPDFWindow);
 
-var _showExportPDFDialog = __webpack_require__(190);
+var _showExportPDFDialog = __webpack_require__(191);
 
 var _showExportPDFDialog2 = _interopRequireDefault(_showExportPDFDialog);
 
@@ -560,7 +560,6 @@ function exportPDF() {
 		    filePath = _ref4[0],
 		    text = _ref4[1];
 
-		console.log("first then");
 		var pdfWindow = (0, _createPDFWindow2.default)(text);
 		pdfWindow.on("RENDERED_CONTENTS", function () {
 			console.log("receive RENDERED_CONTENTS");

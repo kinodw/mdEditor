@@ -19,7 +19,7 @@
 import React from "react";
 import marked from "marked";
 import style from "./Previewer.css";
-//import emojify from "emojify.js";
+
 
 marked.setOptions({ sanitize: true });
 
