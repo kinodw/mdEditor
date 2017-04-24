@@ -35,7 +35,7 @@ export default class Previewer extends React.Component{
     targetText = targetText.replace(/(:[0-9a-zA-Z_\+\-]+?:)/g, " $1 ");
     targetText = this.props.toEmoji.replace(targetText);
 
-    console.log(targetText);
+   //console.log(targetText);
     return(
       <div
        	id="previewer"

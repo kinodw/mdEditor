@@ -6,7 +6,7 @@ class PDFWindow extends EventEmitter{
 	constructor(text) {
 		super(text);
 		// PDF印刷用画面はユーザーに触れる必要がないため show: false
-		this.window =  new BrowserWindow({show: false});
+		this.window =  new BrowserWindow({show: true});
 		this.window.loadURL(`file://${__dirname}/../../pdf.html`);
 		ipcMain.once("REQUEST_TEXT", (e) => {
 			e.returnValue = text;

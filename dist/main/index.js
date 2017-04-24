@@ -243,7 +243,7 @@ var PDFWindow = function (_EventEmitter) {
 		// PDF印刷用画面はユーザーに触れる必要がないため show: false
 		var _this = _possibleConstructorReturn(this, (PDFWindow.__proto__ || Object.getPrototypeOf(PDFWindow)).call(this, text));
 
-		_this.window = new _electron.BrowserWindow({ show: false });
+		_this.window = new _electron.BrowserWindow({ show: true });
 		_this.window.loadURL("file://" + __dirname + "/../../pdf.html");
 		_electron.ipcMain.once("REQUEST_TEXT", function (e) {
 			e.returnValue = text;
